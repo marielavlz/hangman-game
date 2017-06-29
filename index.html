@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Hangman Game</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker|Rock+Salt" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+  <h1>
+    Let's Play Hangman! 
+  </h1>
+  <h3>
+    (When You Should Be Doing Homework!)
+  </h3>
+    <div class='topmatter'> <!-- encloses topmatter -->
+
+      <div class="stickfigure">
+        <img src="assets/images/drink.png" id="drinking">
+      </div>
+      <form name="guessbox">
+        <div class='side-container'>
+          <div class='container-title'>Guess A Letter!</div>
+          <div class='input-area'>
+            <input id='letter-input' type='text' maxlength='1'/>
+          </div>
+            <input id= "guess-button" name="input-letter" type="button" value="Guess" onClick="checkLetter()">
+        </div>
+      </form>
+    
+      <div class='side-container'>
+        <div class='container-title'>Guessed Letters</div>
+        <div id="wrong-letters" class='input-area'></div>
+      </div>
+
+      <div class="Hangman">
+        <center>
+          <img src="assets/images/hangman.png" id="hangman">
+        </center>
+      </div>
+
+    </div>
+    <div class='bottommatter'>
+        <div class='word-box'>
+            <div id='word-display'>
+            </div>
+        </div>
+    </div>   
+    <center>
+      <input id= "new-game" name="refresh" type="button" value="New Game" onClick="location.reload()">
+    </center>
+</body>
+<script src='assets/javascript/game.js'></script>
+</html>

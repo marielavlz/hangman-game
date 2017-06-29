@@ -1,0 +1,102 @@
+body { 
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight:bold; 
+    font-size:14pt;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #6f5a2d;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #6f5a2d;
+}
+/* Topmatter */
+.topmatter {
+    height:210px;    
+}
+.bottommatter{
+    background:#f1f1f1;
+    height:auto;
+}
+/* For the 'Guess A Letter!' and 'Guessed Letter' boxes. */
+.side-container {
+    margin-top:45px;
+    margin-left:130px;
+    width:170px;
+    text-align:center;
+}
+.container-title {
+    color:#6f5a2d;
+}
+.input-area {
+    width:75px;
+    height:31px;
+    margin:auto;
+    padding:3pt;
+    border: 1px #6f5a2d solid;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    background:#ebe2ce;
+}
+#letter-input {
+    border:1px #6f5a2d solid;
+    width:20pt;
+    font-size:14pt;
+    text-align:center;
+}
+.guessed-letter {
+    color:#792c15;
+}
+
+#guess-button {
+    margin-top: 5px;
+}
+/* Word Box */
+.word-box {
+    width:300px;
+    margin:auto;
+    margin-top:35px;
+    text-align:center;
+}
+#word-display {
+    background:#ebe2ce;
+    border:1px #6f5a2d solid;
+    height:31px;
+    padding:3pt;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+    font-size: 20px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.shown-letter {
+    border-bottom: 3px #000 solid;
+    padding: 0 2px;
+    margin: 0 2px;
+    color:#1c2025;
+}
+
+#new-game {
+    margin-top: 8px;
+}
+
+/*Hangman Picture*/
+#hangman {
+    position: relative;
+    top: -194px;
+}
+
+#drinking {
+    float: right;
+    width: 100px;
+    height: 200px;
+    position: relative;
+    right: 110px;
+    top: 20px;
+}
