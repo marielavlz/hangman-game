@@ -1,5 +1,5 @@
 //Generate random word the user will try to guess
-var words = ['VALERIE', 'LUCAS', 'NEHEMIAH', 'JAVASCRIPT', 'HELP', 'CONFUSED', 'CODING', 'PUERTORICO', 'MICROBIOLOGY'];
+var words = ['VALERIE', 'LUCAS', 'NEHEMIAH', 'JAVASCRIPT', 'HELP', 'CONFUSED', 'CODING', 'PUERTORICO', 'MICROBIOLOGY', 'HOUSTON', 'BOOTCAMP'];
 
 function chooseWord () {
     var randomWord = words[Math.floor(Math.random() * words.length)];
@@ -32,7 +32,7 @@ function printWord(){
   		guessField.appendChild(letterLines);
 	}
 }
-//princtWord gets called when the page loads.
+//printWord gets called when the page loads.
 printWord();
 
 //YAS BESH I FIGURED IT OUT WHAT IT DO!
@@ -41,8 +41,8 @@ printWord();
 
 var checkLetter = function(){
   console.log('guess-button');
-  var a = document.guessbox; 
-  var x = a.elements["letter-input"]; 
+  var a = document.guessbox; //guessbox is a form in the html
+  var x = a.elements["letter-input"]; //pulling out the letter-input id from html and assigning it to variable x
   var character = x.value; //this should be the letter inputed.
   character = character.toUpperCase();
 
@@ -50,7 +50,7 @@ var checkLetter = function(){
   for (var i = 0; i < letterArrays.length; i++){
     if(letterArrays[i] === character){
       newArray[i] = character + " "; //replacing the underscore with the letter inputed.
-      //var hit = true;
+      var hit = true;
     }
   x.value = "";
   }
@@ -58,14 +58,43 @@ var checkLetter = function(){
   var guessField = document.getElementById("word-display");
   guessField.innerHTML= ""; 
   printWord();
-}
 
-//Else, it'll go to an incorrect letter bank.
+//Else, it'll go to an incorrect letter bank and the hangman grows.
+
+   if (!hit) {
+    var guessedLetters = document.getElementById("wrong-letters");
+    var inputLetters = document.createTextNode(" " + character);
+    guessedLetters.appendChild(inputLetters); 
+    error++;
+    var hangman = document.getElementById("hangman");
+    hangman.src = "http://www.writteninpencil.de/Projekte/Hangman/hangman" + error + ".png";
+  }
 
 //Needs to check if all letters in the random word are present.
+  var finished = true;
+  for (var i = 0; i < newArray.length; i++){
+    if(newArray[i] === "_"){
+      finished = false;
+    }
+  }
 
-//With every incorrect letter, the number of tries decreases and the hangman grows. Tries are not affected by correct guesses.
+  if(finished){
+    window.alert("You win!");
+  }
 
 //After a certain number of ties, the user will lose unless he wins first by having all the letters present in the guess field. 
+
+  if(error === 6){
+    window.alert("Sucks to suck!");
+  }
+
+}
+
+
+ 
+
+
+
+
 
 //after winning or losing, the game restarts
